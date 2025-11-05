@@ -1,0 +1,226 @@
+[
+    {
+        "id": "851fb067",
+        "directives": {
+            "solution": null,
+            "masterOnly": null,
+            "workUnit": null,
+            "check": true,
+            "test": null,
+            "title": "equality",
+            "grade": 1.0,
+            "match": "exact",
+            "normalize": null
+        },
+        "text": "",
+        "type": "empty"
+    },
+    {
+        "id": "6f42959f",
+        "directives": {
+            "solution": null,
+            "masterOnly": null,
+            "workUnit": null,
+            "check": true,
+            "test": null,
+            "title": "FD satisfaction",
+            "grade": 1.0,
+            "match": "exact",
+            "normalize": null
+        },
+        "text": "SAT: a -> c? False\nSAT: b -> c? True",
+        "type": "stdout"
+    },
+    {
+        "id": "b32a0c85",
+        "directives": {
+            "solution": null,
+            "masterOnly": null,
+            "workUnit": null,
+            "check": true,
+            "test": null,
+            "title": "adding FDs",
+            "grade": 1.0,
+            "match": "exact",
+            "normalize": null
+        },
+        "text": "a -> c is rejected.\na,c -> b is accepted.\n  FD: a,c -> b\n   a  b  c\n0  1  2  3\n1  1  4  5",
+        "type": "stdout"
+    },
+    {
+        "id": "68f8adaa",
+        "directives": {
+            "solution": null,
+            "masterOnly": null,
+            "workUnit": null,
+            "check": true,
+            "test": null,
+            "title": "load from csv",
+            "grade": 1.0,
+            "match": "exact",
+            "normalize": null
+        },
+        "text": "No FDs.\n   a id1 message\n0  1   2   hello\n1  2   1    bye \n2  3   2   world\nNo FDs.\n   a id2  name\n0  1   2  mary\n1  2   2  mary\n2  3   1   joe",
+        "type": "stdout"
+    },
+    {
+        "id": "a3cc6b18",
+        "directives": {
+            "solution": null,
+            "masterOnly": null,
+            "workUnit": null,
+            "check": true,
+            "test": null,
+            "title": "projection",
+            "grade": 1.0,
+            "match": "exact",
+            "normalize": null
+        },
+        "text": "No FDs.",
+        "type": "stdout"
+    },
+    {
+        "id": "84fe0bad",
+        "directives": {
+            "solution": null,
+            "masterOnly": null,
+            "workUnit": null,
+            "check": true,
+            "test": null,
+            "title": "natural join",
+            "grade": 1.0,
+            "match": "exact",
+            "normalize": null
+        },
+        "text": "No FDs.",
+        "type": "stdout"
+    },
+    {
+        "id": "5f2a4cfa",
+        "directives": {
+            "solution": null,
+            "masterOnly": null,
+            "workUnit": null,
+            "check": true,
+            "test": null,
+            "title": "closure",
+            "grade": 1.0,
+            "match": "exact",
+            "normalize": null
+        },
+        "text": "{a}+ =  ['a', 'b', 'c', 'd']\n{b}+ =  ['b', 'd']\n{ae}+ =  ['a', 'b', 'c', 'd', 'e']",
+        "type": "stdout"
+    },
+    {
+        "id": "60975026",
+        "directives": {
+            "solution": null,
+            "masterOnly": null,
+            "workUnit": null,
+            "check": true,
+            "test": null,
+            "title": "BCNF violations",
+            "grade": 1.0,
+            "match": "exact",
+            "normalize": null
+        },
+        "text": "{'a'} -> {'d', 'a', 'c', 'b'} violates BCNF\n{'b'} -> {'d', 'b'} violates BCNF\n{'c'} -> {'d', 'c', 'b'} violates BCNF",
+        "type": "stdout"
+    },
+    {
+        "id": "30bea21d",
+        "directives": {
+            "solution": null,
+            "masterOnly": null,
+            "workUnit": null,
+            "check": true,
+            "test": null,
+            "title": "a real example",
+            "grade": 1.0,
+            "match": "exact",
+            "normalize": null
+        },
+        "text": "  FD: project_title -> client,deadline,lead\n  FD: member_name -> age,city,email\n  FD: email -> member_name",
+        "type": "stdout"
+    },
+    {
+        "id": "bff32ffa",
+        "directives": {
+            "solution": null,
+            "masterOnly": null,
+            "workUnit": null,
+            "check": true,
+            "test": null,
+            "title": "FD violations",
+            "grade": 1.0,
+            "match": "exact",
+            "normalize": null
+        },
+        "text": "SAT project_title -> skill? False",
+        "type": "stdout"
+    },
+    {
+        "id": "18ae2b3a",
+        "directives": {
+            "solution": null,
+            "masterOnly": null,
+            "workUnit": null,
+            "check": true,
+            "test": null,
+            "title": "project_title closure",
+            "grade": 1.0,
+            "match": "exact",
+            "normalize": null
+        },
+        "text": "['age',\n 'city',\n 'client',\n 'deadline',\n 'email',\n 'lead',\n 'member_name',\n 'project_title',\n 'skill']",
+        "type": "execute_result"
+    },
+    {
+        "id": "c2c57c2a",
+        "directives": {
+            "solution": null,
+            "masterOnly": null,
+            "workUnit": null,
+            "check": true,
+            "test": null,
+            "title": "BCNF decomposition",
+            "grade": 3.0,
+            "match": "exact",
+            "normalize": null
+        },
+        "text": "R(age,city,email,member_name)\n    FD: member_name -> age,city,email\n    FD: email -> age,city,member_name\n\nR(client,deadline,lead,project_title)\n    FD: project_title -> client,deadline,lead\n\nR(member_name,project_title,skill)",
+        "type": "stdout"
+    },
+    {
+        "id": "e61a9e55-315a-401f-b90e-3589c3522743",
+        "directives": {
+            "solution": null,
+            "masterOnly": null,
+            "workUnit": null,
+            "check": true,
+            "test": null,
+            "title": "satisfies BCNF",
+            "grade": 3.0,
+            "match": "exact",
+            "normalize": null
+        },
+        "text": "[]\n[]\n[]",
+        "type": "stdout"
+    },
+    {
+        "id": "a60d8316",
+        "directives": {
+            "solution": null,
+            "masterOnly": null,
+            "workUnit": null,
+            "check": true,
+            "test": null,
+            "title": "lossless join",
+            "grade": 3.0,
+            "match": "exact",
+            "normalize": null
+        },
+        "text": "Lossless join? True",
+        "type": "stdout"
+    }
+]
