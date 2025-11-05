@@ -65,5 +65,5 @@ Lossless join? True
 ```
 
 ## 👤 Author
-Klein  
+Klein Cafa
 CSCI 3030U — Database Systems & Concepts
